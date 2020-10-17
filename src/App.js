@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useCallback, useContext, useState, useEffect, Suspense } from "react";
+import "./App.css";
+import globalStateContext, {
+  GlobalStateContextProvider,
+  globalStateContextProvider,
+} from "../src/globalContext/globalContext";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+/////////////
+import LoginPage from "./pages/LoginPage/LoginPage";
+import HomePage from "./pages/HomePage/HomePage";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
+  const GlobalValues = useContext(globalStateContext);
+  const [order, setOrder] = useState(2);
+  const [isMobile, setIsMobile] = useState(Boolean);
+
+  const updateIfMobile = () => {
+    const ifMobile = window.innerWidth < 768 ? true : false;
+
+    setIsMobile(ifMobile);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateIfMobile);
+    console.log(isMobile);
+  }, [isMobile]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStateContextProvider value={{ orderDispatcher: [order, setOrder] }}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={LoginPage} />
+            <ProtectedRoute exact path="/home" component={HomePage} />
+          </Switch>
+        </BrowserRouter>
+      </GlobalStateContextProvider>
+    </>
   );
 }
 
