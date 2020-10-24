@@ -30,9 +30,10 @@ function App() {
     console.log(isMobile);
   }, [isMobile]);
 
+  
   return (
     <>
-      <GlobalStateContextProvider value={{ orderDispatcher: [order, setOrder] }}>
+      <GlobalStateContextProvider value={{ mobileDispatcher: [isMobile, setIsMobile] }}>
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={LoginPage} />

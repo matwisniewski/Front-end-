@@ -1,30 +1,32 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
+import globalStateContext from "../../globalContext/globalContext";
 import "./LoginPage.css";
+import LoginForm from "../../components/LoginForm/LoginForm";
+
 function LoginPage() {
-  require("dotenv").config();
+  const { mobileDispatcher } = useContext(globalStateContext);
+  const [isMobile, setIsMobile] = mobileDispatcher;
   const url = process.env.API_URL;
 
-  console.log("env " + url);
   return (
     <>
-      <div className="login-page">
-        <div className="form">
-          <form className="register-form">
-            <input type="text" placeholder="name" />
-            <input type="password" placeholder="password" />
-            <input type="text" placeholder="email address" />
-            <button>create</button>
-            <p className="message">
-              Already registered? <a href="#">Sign In</a>
-            </p>
-          </form>
-          <form className="login-form">
-            <input type="text" placeholder="username" />
-            <input type="password" placeholder="password" />
-            <button>Login{url}</button>
-          </form>
+      {isMobile ? (
+        <div style={{ height: "100vh", width: "100vw" }}>
+          <LoginForm />
         </div>
-      </div>
+      ) : (
+        <div className="page">
+          <div className="left-half">
+            <img
+              style={{ height: "100%", width: "100%", objectFit: "cover" }}
+              src="https://images.pexels.com/photos/1853010/pexels-photo-1853010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+          </div>
+          <div className="right-half">
+            <LoginForm />
+          </div>
+        </div>
+      )}
     </>
   );
 }
