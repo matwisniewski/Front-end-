@@ -19,6 +19,7 @@ function App() {
 
   const url = process.env.REACT_APP_API_URL;
   console.log("env " + url);
+
   const updateIfMobile = () => {
     const ifMobile = window.innerWidth < 768 ? true : false;
 
@@ -30,7 +31,6 @@ function App() {
     console.log(isMobile);
   }, [isMobile]);
 
-  
   return (
     <>
       <GlobalStateContextProvider value={{ mobileDispatcher: [isMobile, setIsMobile] }}>

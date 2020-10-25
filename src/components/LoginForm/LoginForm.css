@@ -33,18 +33,20 @@
   width:300px;
   
   border:none;
-  border-bottom:1px solid #757575;
+  border-bottom:1px solid black;
   margin: 10px;
+  
   
 
 }
 input:focus {
     outline:none;
+    background-color: #f5f3f4;
 }
 
 .form button {
  border: none;
-  border-radius: 10px;
+  border-radius: 5px;
     background-color: black; /* Green */
   
   color: white;
@@ -55,11 +57,14 @@ input:focus {
   font-size: 16px;
  cursor: pointer;
  outline:none;
- 
+ margin: 15px;
 }
 .form button:active {
     border: none;
-background-color: #26313a;
+
   background-size: 100%;
-  transition: background 0s;
+  
+}
+.form button:hover{
+  background-color: #161a1d;
 }

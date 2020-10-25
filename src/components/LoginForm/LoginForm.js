@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import globalStateContext from "../../globalContext/globalContext";
+
 import "./LoginForm.css";
 
 function LoginForm() {
@@ -15,7 +16,11 @@ function LoginForm() {
 
   return (
     <div className="form">
-      <h1>Zaloguj się !</h1>
+      <img
+        src="https://www.klapec.pl/images/design/logo.png"
+        width="200"
+        height="141"
+      />
       <input
         id="user"
         placeholder="Użytkownik"
@@ -30,7 +35,7 @@ function LoginForm() {
         onChange={(e) => setPassword(e.target.value)}
         required=""
       />
-      <button>Zaloguj </button>
+      <button>Zaloguj się</button>
     </div>
   );
 }
