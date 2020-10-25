@@ -47,7 +47,7 @@ input:focus {
 .form button {
  border: none;
   border-radius: 5px;
-    background-color: black; /* Green */
+    background-color: #FF8C00; /* Green */
   
   color: white;
   padding: 15px 32px;
@@ -66,5 +66,5 @@ input:focus {
   
 }
 .form button:hover{
-  background-color: #161a1d;
+  background-color: #c55d00;
 }

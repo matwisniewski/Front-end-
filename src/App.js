@@ -1,4 +1,11 @@
-import React, { createContext, useCallback, useContext, useState, useEffect, Suspense } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useState,
+  useEffect,
+  Suspense,
+} from "react";
 import dotenv from "dotenv";
 import "./App.css";
 import globalStateContext, {
@@ -27,13 +34,16 @@ function App() {
   };
 
   useEffect(() => {
+    updateIfMobile();
     window.addEventListener("resize", updateIfMobile);
     console.log(isMobile);
   }, [isMobile]);
 
   return (
     <>
-      <GlobalStateContextProvider value={{ mobileDispatcher: [isMobile, setIsMobile] }}>
+      <GlobalStateContextProvider
+        value={{ mobileDispatcher: [isMobile, setIsMobile] }}
+      >
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={LoginPage} />
