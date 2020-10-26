@@ -1,9 +1,9 @@
 import React from "react";
-
+import PageWrapper from "../../components/PageWrapper/PageWrapper";
 function HomePage() {
   return (
     <>
-      <div>Home Page</div>
+      <PageWrapper />
     </>
   );
 }

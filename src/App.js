@@ -1,11 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useState,
-  useEffect,
-  Suspense,
-} from "react";
+import React, { createContext, useCallback, useContext, useState, useEffect, Suspense } from "react";
 import dotenv from "dotenv";
 import "./App.css";
 import globalStateContext, {
@@ -41,12 +34,11 @@ function App() {
 
   return (
     <>
-      <GlobalStateContextProvider
-        value={{ mobileDispatcher: [isMobile, setIsMobile] }}
-      >
+      <GlobalStateContextProvider value={{ mobileDispatcher: [isMobile, setIsMobile] }}>
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={LoginPage} />
+            <Route exact path="/test" component={HomePage} />
             <ProtectedRoute exact path="/home" component={HomePage} />
           </Switch>
         </BrowserRouter>
