@@ -1,4 +1,11 @@
-import React, { createContext, useCallback, useContext, useState, useEffect, Suspense } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useState,
+  useEffect,
+  Suspense,
+} from "react";
 import dotenv from "dotenv";
 import "./App.css";
 import globalStateContext, {
@@ -16,6 +23,7 @@ function App() {
   const GlobalValues = useContext(globalStateContext);
   const [order, setOrder] = useState(2);
   const [isMobile, setIsMobile] = useState(Boolean);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const url = process.env.REACT_APP_API_URL;
   console.log("env " + url);
@@ -34,7 +42,12 @@ function App() {
 
   return (
     <>
-      <GlobalStateContextProvider value={{ mobileDispatcher: [isMobile, setIsMobile] }}>
+      <GlobalStateContextProvider
+        value={{
+          mobileDispatcher: [isMobile, setIsMobile],
+          privelageLevelDispatcher: [isAdmin, setIsAdmin],
+        }}
+      >
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={LoginPage} />

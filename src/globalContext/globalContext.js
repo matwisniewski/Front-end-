@@ -6,6 +6,7 @@ export const GlobalContextValues = {
   theme: "light",
   loading: true,
   token: "",
+  secondaryColor: "#FF8C00",
 };
 
 const globalStateContext = React.createContext(GlobalContextValues);
