@@ -1,6 +1,7 @@
 import React from "react";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 import OrderCard from "../../components/OrderCard/OrderCard";
+import "./HomePage.css";
 function HomePage() {
   return (
     <>
@@ -12,17 +13,28 @@ function HomePage() {
 export default HomePage;
 
 const HomePageContent = () => {
+  const ordersList = [
+    { date: "12/1/2011", reading: 3, id: 20055 },
+    { date: "13/1/2011", reading: 5, id: 20053 },
+    { date: "14/1/2011", reading: 6, id: 45652 },
+  ];
+
   return (
     <>
       <div className="content-top">
-        <div>
-          This example use media queries to transform the sidebar to a top
-          navigation bar when the screen size is 700px or less.
-        </div>
+        <input
+          className="searchInput"
+          type="text"
+          placeholder="Nazwisko klienta"
+          required
+        />
+        <button>Szukaj</button>
       </div>
+      <h3>Zamówienia</h3>
+      {ordersList.map((date, id) => (
+        <OrderCard name={id} />
+      ))}
 
-      <h3>Resize the browser window to see the effect.</h3>
-      <OrderCard />
       <OrderCard />
       <OrderCard />
       <OrderCard />

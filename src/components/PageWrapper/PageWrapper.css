@@ -41,14 +41,10 @@ div.content {
   margin-left: 200px;
   
   height: 100%;
+  margin-bottom: 50px;
  
 }
-div.content-top {
- background-color: #555;
- height: 45px;
- width: 100%;
-  
-}
+
 
 
 

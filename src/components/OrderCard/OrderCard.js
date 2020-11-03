@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Card } from "./OrderCard.css";
 
-function OrderCard() {
+function OrderCard(props) {
   return (
     <>
       <Card>
-        <div>jakiś napis!</div>
+        <div>jakiś napis!{props.name}</div>
       </Card>
     </>
   );
