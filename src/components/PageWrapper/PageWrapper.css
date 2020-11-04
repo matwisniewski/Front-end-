@@ -11,7 +11,7 @@
 .sidebar a {
   display: flex;
   color: black;
-  padding: 12px;
+  padding: 15px;
   text-decoration: none;
   align-items: center;
   justify-content: center;
@@ -23,8 +23,8 @@
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+  background-color: #FF8C00;
+ 
 }
 
 div.content-items {
@@ -44,8 +44,20 @@ div.content {
   margin-bottom: 50px;
  
 }
+.sidebarButton {
+    width: 100;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10px;
+    
+  }
+.sidebarButton:hover {
+background-color:#FF8C00 ;
 
-
+cursor: pointer;
+}
 
 
 
@@ -55,9 +67,7 @@ div.content {
     height: auto;
     position: relative;
   }
-  .sidebar a {
-    float: left;
-  }
+  
   div.content {
     margin-left: 0;
   }
