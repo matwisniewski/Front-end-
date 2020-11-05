@@ -7,7 +7,7 @@ import React, {
   Suspense,
 } from "react";
 import dotenv from "dotenv";
-import "./App.css";
+
 import globalStateContext, {
   GlobalStateContextProvider,
   globalStateContextProvider,

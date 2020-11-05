@@ -23,22 +23,30 @@ function BottomNav() {
         <>
           <BottomNavigation>
             <BottomNavButton>
-              <Icon path={mdiBookOpenOutline} size={"30"} />
+              <Link to="/test">
+                <Icon path={mdiBookOpenOutline} size={"30"} />
 
-              <div>Zamówienia</div>
+                <div>Zamówienia</div>
+              </Link>
             </BottomNavButton>
             <BottomNavButton>
-              <Icon path={mdiBookPlusOutline} size={"30"} />
-              <div>Nowe zamówienie</div>
+              <Link to="/NewOrder">
+                <Icon path={mdiBookPlusOutline} size={"30"} />
+                <div>Nowe zamówienie</div>
+              </Link>
             </BottomNavButton>
             <BottomNavButton>
-              <Icon path={mdiBank} size={"30"} />
-              <div>Sklepy</div>
+              <Link to="/Shops">
+                <Icon path={mdiBank} size={"30"} />
+                <div>Sklepy</div>
+              </Link>
             </BottomNavButton>
             {isAdmin ? (
               <BottomNavButton>
-                <Icon path={mdiCogOutline} size={"30"} />
-                <div>Administrator</div>
+                <Link to="/AdminPage">
+                  <Icon path={mdiCogOutline} size={"30"} />
+                  <div>Administrator</div>
+                </Link>
               </BottomNavButton>
             ) : (
               <></>
