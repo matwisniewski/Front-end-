@@ -7,14 +7,31 @@
   height: 100%;
   overflow: auto;
 }
+.sidebarButton {
+    
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+    
+  }
+  .buttonText{
+    padding-left: 10px;
+  }
 
 .sidebar a {
   display: flex;
-  color: black;
-  padding: 15px;
+   flex-direction: row;
+ color: black;
+ padding: 15px;
+ width: 100%;
+  font-size: 15px;
+ 
   text-decoration: none;
-  align-items: center;
-  justify-content: center;
+   flex-direction: row;
+  
+  justify-content: flex-start;
 }
 
 .sidebar a.active {
@@ -41,18 +58,10 @@ div.content {
   margin-left: 200px;
   
   height: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
  
 }
-.sidebarButton {
-    width: 100;
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 10px;
-    
-  }
+
 .sidebarButton:hover {
 background-color:#FF8C00 ;
 

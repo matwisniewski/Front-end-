@@ -26,24 +26,30 @@ function PageWrapper(props) {
       ) : (
         <div className="sidebar">
           <div className="sidebarButton">
-            <Icon path={mdiBookOpenOutline} size={"20"} />
-            <Link to="/test">Zamówienia</Link>
+            <Link to="/test">
+              <Icon path={mdiBookOpenOutline} size={"25"} />
+              <div className="buttonText"> Zamówienia</div>
+            </Link>
           </div>
           <div className="sidebarButton">
-            <Icon path={mdiBookPlusOutline} size={"20"} />
-            <Link to="/NewOrder">Nowe zamówienie</Link>
+            <Link to="/NewOrder">
+              <Icon path={mdiBookPlusOutline} size={"25"} />
+              <div className="buttonText">Nowe zamówienie</div>
+            </Link>
           </div>
           <div className="sidebarButton">
-            <Icon path={mdiBank} size={"20"} />
-            <Link to="/Shops">Sklepy</Link>
+            <Link to="/Shops">
+              <Icon path={mdiBank} size={"25"} />
+              <div className="buttonText">Sklepy</div>
+            </Link>
           </div>
           {isAdmin ? (
-            <Link to="/AdminPage">
-              <div className="sidebarButton">
-                <Icon path={mdiAccountCog} size={"20"} />
-                <Link to="/AdminPage">Administrator</Link>
-              </div>
-            </Link>
+            <div className="sidebarButton">
+              <Link to="/AdminPage">
+                <Icon path={mdiAccountCog} size={"25"} />
+                <div className="buttonText">Administrator</div>
+              </Link>
+            </div>
           ) : (
             <></>
           )}
