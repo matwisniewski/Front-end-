@@ -1,11 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useState,
-  useEffect,
-  Suspense,
-} from "react";
+import React, { createContext, useCallback, useContext, useState, useEffect, Suspense } from "react";
 import dotenv from "dotenv";
 
 import globalStateContext, {

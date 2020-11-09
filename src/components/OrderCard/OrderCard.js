@@ -15,8 +15,7 @@ function OrderCard(props) {
     <Card>
       <InfoCardTitle>
         <div>
-          Biała czekolada z maliną z konfiturą malinową {props.name} Biała
-          czekolada z maliną z konfiturą malinową
+          Biała czekolada z maliną z konfiturą malinową {props.name} Biała czekolada z maliną z konfiturą malinową
         </div>
       </InfoCardTitle>
       <InfoCardContent>

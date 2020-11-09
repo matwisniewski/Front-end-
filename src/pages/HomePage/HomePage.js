@@ -22,12 +22,7 @@ const HomePageContent = () => {
   return (
     <>
       <div className="content-top">
-        <input
-          className="searchInput"
-          type="text"
-          placeholder="Nazwisko klienta"
-          required
-        />
+        <input className="searchInput" type="text" placeholder="Nazwisko klienta" required />
         <button>Szukaj</button>
       </div>
       <h3>Zamówienia</h3>

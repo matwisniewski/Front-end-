@@ -8,11 +8,6 @@ export const SidebarNavigation = styled.div`
   position: fixed;
   height: 100%;
   overflow: auto;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
 `;
 
 export const SidebarButton = styled.div`
@@ -48,7 +43,7 @@ export const PageContent = styled.div`
   margin-left: 250px;
   height: 100%;
   margin-bottom: 80px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-left: 0;
   }
 `;
@@ -58,7 +53,7 @@ export const PageContentItems = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-left: 0;
   }
 `;
