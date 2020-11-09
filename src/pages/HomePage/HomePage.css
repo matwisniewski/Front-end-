@@ -19,6 +19,7 @@ div.content-top {
     border: none;
     background-color: whitesmoke;
     height: 40px;
+    max-width: 400px;
 }
 
 

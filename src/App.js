@@ -27,6 +27,7 @@ function App() {
   const GlobalValues = useContext(globalStateContext);
   const [order, setOrder] = useState(2); // nie wiem po co jest ta zmienna chyba do testów
   const [isMobile, setIsMobile] = useState(Boolean); // variable change if we resize the window
+  const [username, setUsername] = useState("testUser");
   const [isAdmin, setIsAdmin] = useState(true); //privelage level status
 
   const updateIfMobile = () => {
@@ -47,6 +48,7 @@ function App() {
         value={{
           mobileDispatcher: [isMobile, setIsMobile],
           privelageLevelDispatcher: [isAdmin, setIsAdmin],
+          usernameDispatcher: [username, setUsername],
         }}
       >
         <BrowserRouter>

@@ -9,55 +9,67 @@ import {
 } from "@mdi/js";
 
 import globalStateContext from "../../globalContext/globalContext";
-import "./PageWrapper.css";
+import {
+  SidebarNavigation,
+  SidebarButton,
+  SidebarButtonText,
+  SidebarInfo,
+  PageContent,
+  PageContentItems,
+} from "./PageWrapper.css.js";
+
 import BottomNav from "../BottomNav/BottomNav";
 
 function PageWrapper(props) {
-  const { mobileDispatcher, privelageLevelDispatcher } = useContext(
-    globalStateContext
-  );
+  const {
+    mobileDispatcher,
+    privelageLevelDispatcher,
+    usernameDispatcher,
+  } = useContext(globalStateContext);
   const [isMobile, setIsMobile] = mobileDispatcher;
   const [isAdmin, setIsAdmin] = privelageLevelDispatcher;
+  const [username, setUsername] = usernameDispatcher;
 
   return (
     <>
       {isMobile ? (
         <></>
       ) : (
-        <div className="sidebar">
-          <div className="sidebarButton">
-            <Link to="/test">
+        <SidebarNavigation>
+          <SidebarInfo>{username}</SidebarInfo>
+          <Link to="/test">
+            <SidebarButton>
               <Icon path={mdiBookOpenOutline} size={"25"} />
-              <div className="buttonText"> Zamówienia</div>
-            </Link>
-          </div>
-          <div className="sidebarButton">
-            <Link to="/NewOrder">
+              <SidebarButtonText> Zamówienia</SidebarButtonText>
+            </SidebarButton>
+          </Link>
+          <Link to="/NewOrder">
+            <SidebarButton>
               <Icon path={mdiBookPlusOutline} size={"25"} />
-              <div className="buttonText">Nowe zamówienie</div>
-            </Link>
-          </div>
-          <div className="sidebarButton">
-            <Link to="/Shops">
+              <SidebarButtonText>Nowe zamówienie</SidebarButtonText>
+            </SidebarButton>
+          </Link>
+          <Link to="/Shops">
+            <SidebarButton>
               <Icon path={mdiBank} size={"25"} />
-              <div className="buttonText">Sklepy</div>
-            </Link>
-          </div>
+              <SidebarButtonText>Sklepy</SidebarButtonText>
+            </SidebarButton>
+          </Link>
           {isAdmin ? (
-            <div className="sidebarButton">
-              <Link to="/AdminPage">
+            <Link to="/AdminPage">
+              <SidebarButton>
                 <Icon path={mdiAccountCog} size={"25"} />
-                <div className="buttonText">Administrator</div>
-              </Link>
-            </div>
+                <SidebarButtonText>Administrator</SidebarButtonText>
+              </SidebarButton>
+            </Link>
           ) : (
             <></>
           )}
-        </div>
+        </SidebarNavigation>
       )}
-      <div className="content">
-        <div className="content-items">{props.contentItems}</div>
-      </div>
+      <PageContent>
+        <PageContentItems>{props.contentItems}</PageContentItems>
+      </PageContent>
       <BottomNav />
     </>
   );
